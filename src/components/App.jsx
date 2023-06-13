@@ -1,5 +1,5 @@
 import React from "react";
-import { Interface } from "./app/interface";
+import Interface from "./feedbackApp/interface";
 
 export const App = () => {
   return (
