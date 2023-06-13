@@ -24,11 +24,13 @@ class Interface extends Component {
     }
 
     countPositiveFeedbackPercentage = () => {
-        const {good, neutral, bad} = this.state
-        return (good + neutral + bad )/100
+        const {good} = this.state
+        const totalFeedback = this.countTotalFeedback()
+        if (totalFeedback === 0) {
+            return 0
+        }
+        return Math.round((good/totalFeedback)*100)
     }
-
-
 
 
     render() {
@@ -48,7 +50,7 @@ class Interface extends Component {
             <p>Neutral: {neutral}</p>
             <p>Bad: {bad}</p>
             <p>Total: {totalFeedback}</p>
-            <p>Positive feedback: 49%{positiveProcentage}</p>
+            <p>Positive feedback: {positiveProcentage}%</p>
         </div>
     )
     }
@@ -56,3 +58,21 @@ class Interface extends Component {
 }
 
 export default Interface;
+
+
+
+////====================================///////
+    // countPositiveFeedbackPercentage = () => {
+    //     const { good } = this.state;
+    //     const totalFeedback = this.countTotalFeedback();
+    //     if (totalFeedback === 0) {
+    //       return 0;
+    //     }
+    //     return Math.round((good / totalFeedback) * 100);
+    //   };
+
+    // countPositiveFeedbackPercentage = () => {
+    //     const {good, neutral, bad} = this.state
+    //     return Math.round((good/(good + neutral + bad ))*100)
+    // }
+
