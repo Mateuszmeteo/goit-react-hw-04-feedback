@@ -1,3 +1,6 @@
+import React from "react";
+import { Interface } from "./app/interface";
+
 export const App = () => {
   return (
     <div
@@ -11,6 +14,7 @@ export const App = () => {
       }}
     >
       React homework template
+      <Interface />
     </div>
   );
 };
