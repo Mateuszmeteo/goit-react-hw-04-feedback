@@ -18,9 +18,14 @@ class Interface extends Component {
         ))
     }
 
-    // countTotalFeedback()
+    countTotalFeedback = () => {
+        const {good, neutral, bad} = this.state
+        return good + neutral + bad
+    }
 
-    // countPositiveFeedbackPercentage()
+    countPositiveFeedbackPercentage = () => {
+        return ('test')
+    }
 
 
 
@@ -28,6 +33,8 @@ class Interface extends Component {
     render() {
         const { good, neutral, bad} = this.state
         // const params = this.state 
+        const totalFeedback = this.countTotalFeedback()
+        const positiveProcentage = this.countPositiveFeedbackPercentage()
 
         return(
         <div>
@@ -39,6 +46,8 @@ class Interface extends Component {
             <p>Good: {good}</p>
             <p>Neutral: {neutral}</p>
             <p>Bad: {bad}</p>
+            <p>Total: {totalFeedback}</p>
+            <p>Positive feedback: 49%{positiveProcentage}</p>
         </div>
     )
     }
