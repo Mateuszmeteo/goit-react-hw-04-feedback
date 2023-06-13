@@ -24,7 +24,8 @@ class Interface extends Component {
     }
 
     countPositiveFeedbackPercentage = () => {
-        return ('test')
+        const {good, neutral, bad} = this.state
+        return (good + neutral + bad )/100
     }
 
 
