@@ -3,6 +3,7 @@ import React from "react";
 import { Statistics } from "./statistics/statistics";
 import { FeedbackOptions } from "./FeedbackOptions/feedbackOptions";
 import { Section } from "./section/section";
+import { Notification } from "./notification/notification";
 
 
 
@@ -42,7 +43,7 @@ export class App extends React.Component {
     const totalFeedback = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
     const options = Object.keys(this.state);
-    const noFeedback = totalFeedback > 0
+    const startFeedback = totalFeedback > 0
 
     return (
       <div>
@@ -54,7 +55,7 @@ export class App extends React.Component {
         </Section>
 
         <Section>
-          {noFeedback ? (
+          {startFeedback ? (
             <Statistics
             good={good}
             neutral={neutral}
@@ -63,7 +64,9 @@ export class App extends React.Component {
             positivePercentage={positivePercentage}
           />
           ) : (
-            <p>test</p>
+            // <p>test</p>;
+            <Notification />
+            
           )
         }
           
