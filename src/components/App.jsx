@@ -30,7 +30,7 @@ export const App = () => {
 
   const countPositiveFeedbackPercentage = () => {
     const { good } = feedback;
-    const totalFeedback = this.countTotalFeedback();
+    const totalFeedback = countTotalFeedback();
     if (totalFeedback === 0) {
       return 0;
     }
